@@ -1,0 +1,33 @@
+#Pyton Codes
+
+-Introduction to Python
+
+#Find average of marks
+
+"""
+"""# Read input as sepcified in the question
+# Print output as specified in the question
+sub_1=int(input(""))
+sub_2=int(input(""))
+sub_3=int(input(""))
+Average_of_3_subjects=(sub_1+sub_2+sub_3)"""
+print(Average_of_3_subjects/3)"""
+
+#Arithmetic Progression
+""" #Write your code here
+
+a=int(input())
+b=int(input())
+c=int(input())
+d=b-a or c-b or c-a
+print(b-a)"""
+
+#Rectangular Area
+
+"""x1=int(input())
+y1=int(input())
+x2=int(input())
+y2=int(input())
+print((x2-x1)*(y2 - y1))"""\n""""
+
+
