@@ -1,0 +1,211 @@
+#Binary Number
+
+"""
+1111
+000
+11
+0
+"""
+"""
+from math import *
+from collections import *
+from sys import *
+from os import *
+
+## Read input as specified in the question.
+## Print output as specified in the question.
+n = int(input())
+
+for i in range(1, n+1, 1):
+    
+    for j in range(1, n-i+2, 1):        
+        if(i%2 != 0):
+            print('1', end ='')
+            
+        else:
+            print('0', end ='')
+
+     print()""" "\n"\t
+
+
+#Print Number Pyramid
+
+"""
+123456
+ 23456
+  3456
+   456
+    56
+     6
+    56
+   456
+  3456
+ 23456
+123456"""
+
+
+""" 
+from math import *
+from collections import *
+from sys import *
+from os import *
+
+## Read input as specified in the question.
+## Print output as specified in the question.
+num=int(input())
+i=0
+while num>i:
+    spaces=1
+    while spaces<=i:
+        print(" ",end="")
+        spaces=spaces+1
+    j=1
+    while num-i >=j:
+        print(j+i,end="")
+        j=j+1
+    i=i+1
+    print()
+while i>1:
+    spaces=1
+    while spaces<=i-2:
+        print(" ",end="")
+        spaces=spaces+1
+    j=num
+    k=1
+    while j>=i-1:
+        print(i+k-2,end="")
+        j=j-1
+        k=k+1
+
+    i=i-1
+    print()
+   """ "\n" \t
+
+#Diamond of Stars
+
+"""
+    *
+   ***
+  *****
+   ***
+    *
+"""
+
+"""
+from math import *
+from collections import *
+from sys import *
+from os import *
+
+## Read input as specified in the question.
+## Print output as specified in the question.
+n = int(input())
+n1=(n//2)+1
+n2=n-n1
+# Upper part of diamond
+for i in range(1, n1+1):
+    for j in range(1,n1-i+1):
+        print(" ", end="")
+    for j in range(1, 2*i):
+        print("*", end="")
+    print()
+
+# Lower part of diamond
+for i in range(n2,0, -1):
+    for j in range(1,n1-i+1):
+        print(" ", end="")
+    for j in range(1, 2*i):
+        print("*", end="")
+    print()
+"""" "\n" \t
+
+#Rectangular Members
+
+"""
+4444444
+4333334
+4322234
+4321234
+4322234
+4333334
+4444444
+"""
+
+"""
+from math import *
+from collections import *
+from sys import *
+from os import *
+
+## Read input as specified in the question.
+## Print output as specified in the question.
+n=int(input())
+pattern_1=n
+
+for i in range (1,n+1):
+    pattern_3 = n
+    for k in range(1,i):
+        print(pattern_3,end="")
+        pattern_3-=1
+    for j in range (1,2*n+2-2*i):
+        print(pattern_1,end="")
+    pattern_1 -= 1
+
+    for l in range (1,i):
+        pattern_3+=1
+        print(pattern_3,end="")
+    print("")
+
+
+pattern_1=2
+
+for i in range (n,1,-1):
+    pattern_3 = n
+    for k in range(1,i):
+        print(pattern_3,end="")
+        pattern_3-=1
+    for j in range (1,2*n+2-2*i):
+        print(pattern_1,end="")
+    pattern_1+= 1
+
+    for l in range (1,i):
+        pattern_3+=1
+        print(pattern_3,end="")
+    print("")
+""" "\n" \t
+
+#Print the Pattern
+
+"""
+1 2 3 4 5
+11 12 13 14 15
+21 22 23 24 25
+16 17 18 19 20
+6 7 8 9 10
+"""
+
+"""
+from math import *
+from collections import *
+from sys import *
+from os import *
+
+## Read input as specified in the question.
+## Print output as specified in the question.
+n=int(input())
+startvalue=1
+for i in range(1,n+1):
+    for j in range(startvalue,startvalue+n):
+        print(j,end=" ")
+    print()
+    if i==(n+1)//2:
+        if n%2!=0:
+            startvalue=n*(n-2)+1
+        else:
+            startvalue=n*(n-1)+1
+    elif i>(n+1)//2:
+        startvalue=startvalue-2*n
+    else:
+        startvalue=startvalue+2*n
+
+""" "\n"\t
