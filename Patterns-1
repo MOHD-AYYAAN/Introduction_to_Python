@@ -1,0 +1,225 @@
+#Square Pattern 
+
+"""
+4444
+4444
+4444
+4444"""
+
+"""n=int(input())
+i=1
+while i<=n:
+    j=1
+    while j<=n:
+        print(n,end='')
+        j=j+1
+    print()
+    i=i+1""" "\n"\t
+
+#Triangular Star Pattern 
+
+"""
+*
+**
+***
+****
+"""
+
+"""n=int(input())
+i=1
+while i<=n:
+    print("*"*i)
+    i+=1""" "\n"\t
+
+#Triangle Number Pattern
+
+"""1
+   22
+   333
+   4444"""
+
+"""n=int(input())
+for i in range(n+1):
+  for j in range(i):
+    print(i, end = "")
+  print()""" "\n" \t
+
+#Reverse Number Pattern
+
+"""
+1
+21
+321
+4321
+"""
+
+"""n=int(input())
+for i in range(1, n+1):
+    for j in range(i, 0, -1):
+        print(j,end ='')
+    print()""" "\n" \t
+
+#Character Pattern
+
+"""
+A
+BC
+CDE
+DEFG
+"""
+
+"""n=int(input())
+currRow=1
+while currRow<=n:
+    currCol=1
+    char=ord('A')+currRow-1
+    while currCol<=currRow:
+        print(chr(char+currCol-1),end="")
+        currCol+=1
+    print()
+    currRow+=1""" "\n"\t
+
+#Number1 Pattern
+
+"""
+1
+11
+111
+1111
+"""
+
+"""
+from math import *
+from collections import *
+from sys import *
+from os import *
+
+## Read input as specified in the question.
+## Print output as specified in the question.
+n=int(input())
+i=1
+while i<=n:
+    print("1"*i)
+    i+=1""" "\n" \t
+
+#Number Pattern-2
+
+"""
+1
+11
+202
+3003
+"""
+
+"""from math import *
+from collections import *
+from sys import *
+from os import *
+
+## Read input as specified in the question.
+## Print output as specified in the question.
+n = int(input())
+i=1
+
+while i <= n:
+    j=1
+    while j <= i:
+        if i == 1:                                                                                         
+            print(1,end ='')
+        
+        elif j == 1 or j == i:
+            print(i-1,end ='')
+            
+        else:
+            print(0,end='')
+            
+        j=j+1
+    print()
+    i=i+1""" "\n"\t
+
+#Number Pattern-3
+
+"""
+1
+11
+121
+1221
+"""
+
+"""from math import *
+from collections import *
+from sys import *
+from os import *
+
+## Read input as specified in the question.
+## Print output as specified in the question.
+n = int(input())
+i=1
+
+while i <= n:
+    j=1
+    while j <= i:
+        if i == 1:                                                                                         
+            print(1,end ='')
+        
+        elif j == 1 or j == i:
+            print(1,end ='')
+            
+        else:
+            print(2,end='')
+            
+        j=j+1
+    print()
+    i=i+1"""
+
+#Number Pattern
+
+"""
+1234
+123
+12
+1
+"""
+
+from math import *
+from collections import *
+from sys import *
+from os import *
+
+"""## Read input as specified in the question.
+## Print output as specified in the question.
+n=int(input())
+for i in range(n):
+  for j in range(1,n-i+1):
+    print(j,end='')
+  print()""" "\n" \t
+
+#Alpha Pattern
+
+"""
+A
+BB
+CCC
+"""
+
+"""from math import *
+from collections import *
+from sys import *
+from os import *
+
+## Read input as specified in the question.
+## Print output as specified in the question.
+n=int(input())
+num=65
+
+for i in range(0, n):
+    for j in range(0, i+1):
+         ch = chr(num)
+         print(ch, end = "")
+    print(" ")
+
+    num = num + 1""" "\n" \t
+
+
+
+
