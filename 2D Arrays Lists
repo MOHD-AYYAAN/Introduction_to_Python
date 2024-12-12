@@ -1,0 +1,300 @@
+#Row Wise Traversal
+
+"""
+from typing import *
+
+def printRowWise(a : List[List[int]]) -> List[int]:
+    # Write your code here.
+    pass
+    result=[]
+    for row in a:
+        result.extend(row)
+    return result
+    """ "\n"\t
+
+#Coloumn wise ntraversal
+
+"""
+from typing import *
+
+def printColWise(a: List[List[int]]) -> List[int]:
+    if not a:
+        return []
+    result = []
+    num_rows = len(a)
+    num_cols = len(a[0])
+
+    for col in range(num_cols):
+        for row in range(num_rows):
+            result.append(a[row][col])
+
+    return result
+""" "\n"\t
+
+#Row wise sum
+"""
+from sys import stdin
+
+def rowWiseSum(mat, mRows, nCols):
+
+    for i in range(mRows):
+        row_sum = 0  # Initialize sum for each row
+
+        for j in range(nCols):
+            # Add the element to the row sum
+            row_sum += mat[i][j]
+
+        # Print the sum of the row
+        print(row_sum, end = " ")
+""" "\n"\t
+
+#Search in a 2D Matrix
+
+"""
+from os import *
+from sys import *
+from collections import *
+from math import *
+
+def findTargetInMatrix(mat, m, n, target):
+	# Write your code here.
+	for i in range(len(mat)):
+		for j in range(len(mat[i])):
+			if(mat[i][j] == target):
+				return True 
+	return False 
+	
+	
+	#arr = [1, 1]
+	#target = 8
+	#ans = TargetInMatrix(mat, target)
+	#print(f"Element found at index: [{ans[0]} {ans[1]}]")
+	#pass
+""" "\n"\t
+
+#Transpose of a matrix
+
+"""
+from os import *
+from sys import *
+from collections import *
+from math import *
+
+from typing import List
+
+def transpose(m: int, n: int, mat: List[List[int]]) -> List[List[int]]:
+    # Write your code here.
+    
+    row = len(mat)
+    col = len(mat[0])
+    result = [[0] * row for _ in range(col)]
+
+    for i in range(col):
+        for j in range(row):
+            result[i][j]=mat[j][i]
+
+    return result
+""" "\n"\t
+
+#Largest Row or Coloumn
+
+"""
+from sys import stdin
+
+def findLargest(arr, nRows, mCols):
+    if nRows > 0 and mCols > 0:
+        maxRowSum = -2147483648
+        maxColSum = -2147483648
+        maxRowIdx = -1
+        maxColIdx = -1
+        
+        # Calculate the sum of each column
+        for col in range(mCols):
+            colSum = 0
+            for row in range(nRows):
+                colSum += arr[row][col]
+            if colSum > maxColSum:
+                maxColSum = colSum
+                maxColIdx = col
+        
+        # Calculate the sum of each row
+        for row in range(nRows):
+            rowSum = 0
+            for col in range(mCols):
+                rowSum += arr[row][col]
+            if rowSum > maxRowSum:
+                maxRowSum = rowSum
+                maxRowIdx = row
+        
+        if maxColSum > maxRowSum:
+            print("column", maxColIdx, maxColSum)
+        else:
+            print("row", maxRowIdx, maxRowSum)
+    else:
+        print("row", 0, -2147483648)
+
+# Read input
+t = int(stdin.readline().strip())
+for _ in range(t):
+    n, m = map(int, stdin.readline().strip().split())
+    matrix = []
+    for _ in range(n):
+        row = list(map(int, stdin.readline().strip().split()))
+        matrix.append(row)
+    
+    # Call function to find largest row or column
+    findLargest(matrix, n, m)
+
+""" "\n"\t
+
+#Rotate Matrix by 90 degrees
+
+"""
+def rotateMatrix(matrix):
+    # Transpose the matrix
+    transpose(matrix)
+    # Reverse the columns of the transposed matrix
+    reverseColumns(matrix)
+    return matrix
+
+def reverseColumns(matrix):
+    # Get the number of rows in the matrix
+    n = len(matrix)
+    # Iterate over half of the rows
+    for i in range(n // 2):
+        # Iterate over all columns
+        for j in range(n):
+            # Swap elements from top and bottom until meeting at the center
+            temp = matrix[i][j]
+            matrix[i][j] = matrix[n - i - 1][j]
+            matrix[n - i - 1][j] = temp
+
+def transpose(matrix):
+    # Iterate over each row of the matrix
+    for i in range(len(matrix)):
+        # Iterate over each column starting from the diagonal
+        for j in range(i, len(matrix[0])):
+            # Swap the elements across the diagonal
+            temp = matrix[j][i]
+            matrix[j][i] = matrix[i][j]
+            matrix[i][j] = temp
+""" "\n"\t
+
+#Matrix Boundary Traversal
+
+"""
+from os import *
+from sys import *
+from collections import *
+from math import *
+
+# def matrixBoundaryTraversal(mat: [[]], m: int, n: int) -> []:
+
+#     # Write your code from here.
+#     pass
+#     for i in range(m):
+#         for j in range(n):
+#             if(i == 0):
+#                 print mat[i][j],
+#             elif(i == m-1):
+#                 print mat[i][j],
+#             elif(j==0):
+#                 print mat[i][j]
+#             elif(j==n-1):
+#                 print mat[i][j]
+#             else:
+#                 print " ",
+#         print
+
+def matrixBoundaryTraversal(mat: [[]], m: int, n: int) -> []:
+    # Write your code from here.
+    boundary_elements = []
+    for i in range(m):
+        for j in range(n):
+            if i == 0 or i == m - 1 or j == 0 or j == n - 1:
+                boundary_elements.append(mat[i][j])
+    return boundary_elements
+
+""" "\n"\t
+
+#Print Spiral
+
+"""
+from sys import stdin
+
+def spiralPrint(mat, nRows, mCols):
+    #Your code goes here
+    top,bottom = 0, nRows-1
+    left,right=0, mCols-1
+    while top<=bottom and left<=right:
+        for i in range(left,right+1):
+            print(mat[top][i],end=" ")
+        top+=1
+
+        for i in range(top,bottom+1):
+            print(mat[i][right],end=" ")
+        right-=1
+
+        if top<=bottom:
+            for i in range(right,left-1,-1):
+                print(mat[bottom][i],end=" ")
+            bottom-=1
+        if left<=right:
+            for i in range(bottom,top-1,-1):
+                print(mat[i][left],end=" ")
+            left+=1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#Taking Input Using Fast I/O
+def take2DInput() :
+    li = stdin.readline().rstrip().split(" ")
+    nRows = int(li[0])
+    mCols = int(li[1])
+    
+    if nRows == 0 :
+        return list(), 0, 0
+    
+    mat = [list(map(int, input().strip().split(" "))) for row in range(nRows)]
+    return mat, nRows, mCols
+
+
+#main
+t = int(stdin.readline().rstrip())
+
+while t > 0 :
+
+    mat, nRows, mCols = take2DInput()
+    spiralPrint(mat, nRows, mCols)
+    print()
+
+    t -= 1
+
+""" "\n"\t
+
