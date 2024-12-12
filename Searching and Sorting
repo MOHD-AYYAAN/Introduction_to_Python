@@ -1,0 +1,503 @@
+#Binary search
+
+"""
+
+def search(nums: [int], target: int):
+    # write your code logic !!
+  '''  upper=0
+    lower=0
+    mid=(upper+lower)/2
+    a=[]
+    if a[i]>lower:
+        lower=mid+1
+    if a[i]<upper:
+        upper=mid-1
+
+return search'''
+
+def search(nums: [int], target: int):
+    n = len(nums)
+    lower,upper = 0, n-1
+    while lower!= upper:
+        mid = (lower + upper)//2
+        if nums[mid] == target:
+            return mid
+        elif nums[mid] > target:
+            upper = mid
+        elif nums[mid] < target:
+            lower = mid +1
+    return -1       
+""" "\n"\t
+
+#Selection Sort
+
+"""
+from typing import List
+
+def selectionSort(arr: List[int]) -> None: 
+    # Write your code here
+    pass
+    for i in range(len(arr)-1):
+        min_idx = i
+        for j in range(i+1, len(arr)):
+            if arr[min_idx] > arr[j]:
+                min_idx = j
+
+        arr[i], arr[min_idx] = arr[min_idx], arr[i]
+""" "\n" \t
+
+#Bubble Sort
+
+"""
+from typing import List
+
+def bubbleSort(arr: List[int], n: int):
+    for i in range(n):
+        for j in range(0, n-i-1):
+            if arr[j] > arr[j+1]:
+                arr[j], arr[j+1] = arr[j+1], arr[j]
+
+""" "\n"\t
+
+#Insertion Sort
+
+"""
+import os
+import sys
+from copy import deepcopy
+input = lambda: sys.stdin.readline().rstrip("\r\n")
+sys.setrecursionlimit(10 ** 7)
+def insertionSort(arr):
+    # write your code here !!!
+    for i in range(1, len(arr)):
+
+        key = arr[i]
+
+        j=i-1
+
+        while j>=0 and key < arr[j]:
+            arr[j + 1] = arr[j]
+            j -= 1
+        arr[j + 1] = key
+""" "\n"\t
+
+#Merge two sorted Arrays
+
+""""
+from sys import stdin
+
+def merge(arr1, n, arr2, m) : 
+    #Your code goes here
+    # create a new array that will merge and sorted
+    arr3 = []
+    i=j=0
+    while i<n and j<m:
+        if arr1[i]<=arr2[j]:
+            arr3.append(arr1[i])
+            i+=1
+        else:
+            arr3.append(arr2[j])
+            j+=1
+
+    while i<n:
+        arr3.append(arr1[i])
+        i+=1
+    while j<m:
+        arr3.append(arr2[j])
+        j+=1
+    return arr3
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#Taking Input Using Fast I/O
+def takeInput() :
+    n = int(stdin.readline().rstrip())
+    if n != 0:
+        arr = list(map(int, stdin.readline().rstrip().split(" ")))
+        return arr, n
+
+    return list(), 0
+
+
+#to print the array/list
+def printList(arr, n) : 
+    for i in range(n) :
+        print(arr[i], end = " ")
+        
+    print()
+
+
+#main
+t = int(stdin.readline().rstrip())
+
+while t > 0 :
+
+    arr1, n = takeInput()
+    arr2, m = takeInput()
+
+    ans = merge(arr1, n, arr2, m)
+    printList(ans, (n + m))
+
+    t -= 1
+""" "\n" \t
+
+#Push Zeroes two end
+
+"""
+from sys import stdin
+
+def pushZerosAtEnd(arr, n) :
+    #Your code goes here
+    count = 0
+
+    for i in range(n):
+        if arr[i] != 0:
+
+            arr[count] = arr[i]
+            count+=1
+
+    while count < n:
+        arr[count] = 0
+        count += 1
+
+""" "\n"\t
+
+#Rotate Array
+
+"""
+from sys import stdin
+
+
+def rotate(arr, n, d):
+    #Your code goes here
+    temp=[]
+    n=len(arr)
+    for i in range(d,n):
+        
+        temp.append(arr[i])
+        
+    for i in range(0,d):
+        temp.append(arr[i])
+            
+    for i in range(n):
+        arr[i]=temp[i]
+        
+""" "\n"/t
+
+#Second Largest in Array
+
+"""
+from sys import stdin
+#MIN_VALUE = -2147483648
+
+
+def secondLargestElement(arr, n):
+    # arr = []
+    # for i in range(n):
+    #     arr.append(int(input()))
+    # arr.sort()
+    # print(arr[-2])
+    largest = -1
+    secondLargestElement = -1
+    for num in arr:
+        if largest<num:
+            secondLargestElement = largest 
+            largest = num 
+        
+        elif secondLargestElement<num:
+            secondLargestElement = num 
+        
+    return secondLargestElement
+
+
+def takeInput() :
+    n = int(stdin.readline().rstrip())
+    if n != 0:
+        arr = list(map(int, stdin.readline().rstrip().split(" ")))
+        return arr, n
+
+    return list(), 0
+
+
+#main
+arr, n = takeInput()
+print(secondLargestElement(arr, n))
+""" "\n"\t
+
+#Check Array rotation
+
+"""
+from sys import stdin
+
+def arrayRotateCheck(arr, n):
+    if n==0:
+        return 0
+    min_val = arr[0]
+    min_index = 0
+    
+    # Iterate through the array to find the minimum element and its index
+    for i in range(1, n):
+        if arr[i] < min_val:
+            min_val = arr[i]
+            min_index = i
+            
+    # Return the index of the minimum element
+    return min_index
+    # Your code goes here
+    # min = arr[0]
+    # min_index = 0
+    # for i in range(0,n):
+
+    #     if (min > arr[i]):
+
+    #         min = arr[i]
+    #         min_index = i
+
+    #     return min_index;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#Taking Input Using Fast I/O
+def takeInput() :
+    n = int(stdin.readline().rstrip())
+    if n == 0:
+        return list(), 0
+
+    arr = list(map(int, stdin.readline().rstrip().split(" ")))
+    return arr, n
+
+
+#main
+t = int(stdin.readline().rstrip())
+
+while t > 0 :
+
+    arr, n = takeInput()
+    print(arrayRotateCheck(arr, n))
+
+    t -= 1
+""" "\n"\t
+
+#Sort 0 1 2
+
+"""
+from sys import stdin 
+
+def sort012(arr, n) :
+    #Your code goes here
+
+    count0 = 0
+    count1 = 0
+    count2 = 0
+    for i in range(0,n):
+        if(arr[i]==0):
+            count0+=1
+        if(arr[i]==1):
+            count1+=1
+        if(arr[i]==2):
+            count2+=1
+
+    for i in range(0,count0):
+        arr[i] = 0
+    
+    for i in range(count0, (count0 + count1)):
+        arr[i] = 1
+
+    for i in range((count0 +count1),n):
+        arr[i]=2
+
+    return
+
+def printArray(arr, n):
+    for i in range(0,n):
+        print(arr[i], end = " ")
+
+    print()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#Taking Input Using Fast I/O
+def takeInput() :
+    n = int(stdin.readline().rstrip())
+    if n == 0 :
+        return list(), 0
+
+    arr = list(map(int, stdin.readline().rstrip().split(" ")))
+    return arr, n
+
+
+#to print the array/list
+def printList(arr, n) :
+    for i in range(n) :
+        print(arr[i], end = " ")
+
+    print()
+
+
+#main
+t = int(stdin.readline().rstrip())
+
+while t > 0 :
+    
+    arr, n = takeInput()
+
+    sort012(arr, n)
+    printList(arr, n)
+    
+    t -= 1
+
+""" "\n"\t
+
+#Sum of two Arrays
+
+"""
+from sys import stdin
+
+# Function for adding two arrays representing large integers
+def sumOfTwoArrays(arr1, n, arr2, m, output):
+    i = n - 1  # Initialize index i to the last element of arr1
+    j = m - 1  # Initialize index j to the last element of arr2
+    carry = 0  # Initialize carry to 0
+    
+    k = len(output) - 1  # Initialize index k to the last element of the output array
+    
+    if n == 0 and m == 0:
+        return 0  # If both arrays are empty, return 0 (no addition required)
+    
+    # Perform addition while both arrays have elements
+    while i >= 0 and j >= 0:
+        # Calculate the sum of corresponding digits from arr1 and arr2, along with carry
+        total = arr1[i] + arr2[j] + carry
+        
+        # Store the last digit of the total in the output array
+        output[k] = total % 10
+        
+        # Update the carry for the next iteration
+        carry = total // 10
+        
+        k -= 1  # Move to the next position in the output array
+        i -= 1  # Move to the next digit in arr1
+        j -= 1  # Move to the next digit in arr2
+    
+    # Continue adding elements from arr2 if it's longer
+    while j >= 0:
+        total = arr2[j] + carry
+        output[k] = total % 10
+        carry = total // 10
+        k -= 1
+        j -= 1
+    
+    # Continue adding elements from arr1 if it's longer
+    while i >= 0:
+        total = arr1[i] + carry
+        output[k] = total % 10
+        carry = total // 10
+        k -= 1
+        i -= 1
+    
+    # Store any remaining carry in the first element of the output array
+    output[0] = carry
+
+# Taking input using fast I/O
+def takeInput():
+    n = int(stdin.readline().rstrip())  # Read the length of the array
+    if n == 0:
+        return list(), 0  # If the length is 0, return an empty array and 0 length
+    
+    arr = list(map(int, stdin.readline().rstrip().split(" ")))  # Read the array elements
+    return arr, n
+
+# Function to print an array/list
+def printList(arr, n):
+    for i in range(n):
+        print(arr[i], end=" ")  # Print each element separated by a space
+    
+    print()  # Print a newline character to move to the next line
+
+# Main function
+t = int(stdin.readline().rstrip())  # Read the number of test cases
+
+while t > 0:
+    arr1, n = takeInput()  # Read the first array and its length
+    arr2, m = takeInput()  # Read the second array and its length
+    
+    outputSize = (1 + max(n, m))  # Determine the size of the output array
+    output = outputSize * [0]  # Initialize the output array with zeros
+    
+    # Call the sumOfTwoArrays function to calculate the sum and store it in the output array
+    sumOfTwoArrays(arr1, n, arr2, m, output)
+    
+    # Print the result
+    printList(output, outputSize)
+    
+    t -= 1  # Decrement the number of remaining test cases
+""" "\n"\t
