@@ -1,0 +1,184 @@
+# Check Palindrome
+"""
+# Read input as sepcified in the question
+# Print output as specified in the question
+def checkPalindrome(s):
+    i = 0
+    j = len(s)-1
+    while i<=j:
+        if s[i]!=s[j]:
+            return "false"
+        i+=1
+        j-=1
+    return "true"
+s=input()
+print(checkPalindrome(s))""" "\n" \t
+
+#Check Permutation
+
+"""
+from sys import stdin
+
+
+def isPermutation(string1, string2) :
+	#Your code goes here
+    str1=list(string1)
+    str2=list(string2)
+    str1.sort()
+    str2.sort()
+    if str1==str2:
+        return True
+    else:
+        return False
+""" "\n"\t
+
+#Remove Consecutive Duplicates
+
+"""
+from sys import stdin
+
+def removeConsecutiveDuplicates(string) :
+	# Your code goes here
+    i = 0
+    j = 0
+    new_elements = ''
+
+    while j < len(string):
+        if string[i] == string[j]:
+            j += 1
+        elif string[j] != string[i] or j == len(string) - 1:
+            new_elements += string[i]
+            i = j
+            j += 1
+
+    new_elements += string[i]
+    return new_elements
+
+""" "\n"\t
+
+#Reverse Each Word
+
+"""
+
+from sys import stdin
+
+
+def reverseEachWord(s) :
+	# Your code goes here
+	revWord = ''
+	ans = ''
+	for i in s:
+		if i ==" ":
+			ans +=revWord[::-1]  + '  '
+			revWord = ''
+		else:
+			revWord+=i
+
+	return ans+revWord[::-1]
+
+
+
+#main
+string = stdin.readline().strip()
+
+ans = reverseEachWord(string)
+
+print(ans)
+
+""" "\n"\t
+
+#Remove Charactrer
+
+"""
+
+from sys import stdin
+
+
+# def removeAllOccurrencesOfChar(string, ch) :
+# 	# Your code goes here
+# 	if i == 0:
+# 		return s[1:]from sys import stdin
+
+
+def highestOccuringChar(string) :
+	#Your code goes here
+	mp = {}
+	n=len(string)
+	ans =  ' '
+	result = 0
+
+	for i in range(n):
+		mp[string[i]]=mp.get(string[i],0)+1
+		if result <= mp[string[i]]:
+			result=mp[string[i]]
+			ans = string[i]
+	
+	return ans
+
+""" "\n"\t
+
+
+# 	return s[0] + removeAllOccourencesOfChar(s[1:], i - 1)
+	
+# test_str=""
+# new_str=removeAllOccourencesOfChar(test_str,2)
+# print(new_str)
+def removeAllOccurrencesOfChar(string,c):
+    #Your code goes here.
+    return string.replace(c, "")
+""" "\n"\t
+
+#Highest Occouring Character
+
+"""
+
+
+#Compress the String
+
+"""
+
+from sys import stdin,setrecursionlimit
+setrecursionlimit(10**7)
+
+def getCompressedString(s):
+    res = ""
+    cnt = 1
+    for i in range(1, len(s)):
+        if s[i - 1] == s[i]:
+            cnt += 1
+        else:
+            res += s[i - 1]
+            if cnt > 1:
+                res += str(cnt)
+            cnt = 1
+    res += s[-1]
+    if cnt > 1:
+        res += str(cnt)
+    return res
+
+
+# def getCompressedString(input) :
+	# Write your code here.
+	
+	# res = ""
+	# cnt = 1
+	# for i in range(1, len(input)):
+	# 	if input[i - 1] == input[i]:
+
+	# 		cnt += 1
+	# 	else:
+   #       res = res + s[i - 1]
+   #       if cnt > 1:
+   #          res += str(cnt)
+   #       cnt = 1
+   # res = res + s[-1]
+   # if cnt > 1:
+   #    res += str(cnt)
+   # return res
+# Main.
+string = stdin.readline().strip();
+ans = getCompressedString(string)
+print(ans)
+""" "\n"\t
+
+#
