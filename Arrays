@@ -1,0 +1,277 @@
+#Smallest Element
+
+"""
+def find_minimum_element(arr):
+    min_element = arr[0]  # Assume the first element as the minimum
+    
+    # Iterate through the array to find the minimum element
+    for num in arr:
+        if num < min_element:
+            min_element = num
+    
+    return min_element
+
+# Input the number of elements in the array
+N = int(input())
+
+# Input the array elements
+array = list(map(int, input().split()))
+
+# Find the minimum element in the array
+min_element = find_minimum_element(array)
+
+# Output the minimum element
+print(min_element)
+""" "\n" \t
+
+#Array Sum
+
+"""
+def arraySum(arr, n):
+    totalSum = 0
+    for i in range(n):
+        totalSum += arr[i]
+    return totalSum
+
+# Main
+n = int(input())
+arr = [int(x) for x in input().split()]
+print(arraySum(arr, n))
+""" "\n" \t
+
+#Swap Alternate
+
+"""
+from sys import stdin
+
+def swapAlternate(arr, n) :
+    #Your code goes here
+    l=len(arr)
+    for i in  range(0,l-1,2):
+        arr[i],arr[i+1]=arr[i+1],arr[i]
+    return arr
+""" "\n" \t
+
+#Arrange numbers in the Array
+
+"""
+from sys import stdin
+
+def arrange_numbers(arr, n):
+    start, end = 1, n
+    index = 0
+
+    while start <= end:
+        arr[index] = start
+        start += 2
+        index += 1
+
+    start = n if n % 2 == 0 else n - 1
+
+    while start >= 1:
+        arr[index] = start
+        start -= 2
+        index += 1
+
+""" "\n" \t
+
+#Triplet Sum
+
+"""
+from sys import stdin
+
+def findTriplet(arr, n, x) :
+    #Your code goes here
+    #return your answer
+    count = 0
+    for i in range(n):
+        for j in range(i + 1, n):  # Fixing the loop variable
+            for k in range(j + 1, n):  # Fixing the loop variable
+                if arr[i] + arr[j] + arr[k] == x:
+                    count += 1
+    return count
+#Taking Input Using Fast I/O
+def takeInput() :
+    n = int(stdin.readline().strip())
+
+    if n == 0 :
+        return list(), 0
+
+    arr = list(map(int, stdin.readline().strip().split(" ")))
+    return arr, n
+
+
+
+
+
+#main
+t = int(stdin.readline().strip())
+
+while t > 0 :
+
+    arr, n = takeInput()
+    x = int(stdin.readline().strip())
+    print(findTriplet(arr, n, x))
+    t -= 1
+
+""" "\n" \t
+
+#Linear Search
+"""
+from sys import stdin
+
+def linearSearch(arr, n, x) :
+    #Your code goes here
+    for i in range(0, n):
+        if(arr[i] == x):
+            return i
+    return -1
+
+""" "\n" \t
+
+#Sort 0 1
+
+"""
+from sys import stdin
+
+def sortZeroesAndOne(arr, n) :
+    #Your code goes here 
+    count = 0
+    
+    for i in range(0, n):
+        if(arr[i] == 0):
+            count = count + 1
+
+    for i in range(0, count):
+        arr[i] = 0
+        
+    for i in range(count, n):
+        arr[i] = 1
+
+""" "\n" \t
+
+#Find Unique
+
+"""
+import sys
+
+def findUnique(A, ar_size): 
+    #Your code goes here
+    # iterate over every element 
+    for i in range(ar_size): 
+        
+        # Initialize count to 0 
+        count = 0
+        for j in range(ar_size): 
+            
+            # Count the frequency 
+            # of the element 
+            if(A[i] == A[j]): 
+                count += 1
+  
+        # If the frequency of 
+        # the element is one 
+        if(count == 1): 
+            return A[i] 
+            
+    # If no element exist 
+    # at most once 
+    return -1
+
+    # for i in range(0,n):
+
+    #     d=0
+    #     for j in range(0, i):
+    #         if(arr[i] == arr[j]):
+    #             d = 1
+    #             break
+
+    #     if(d == 0):
+    #         print(arr[i])
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#Taking Input Using Fast I/O
+def takeInput() :
+    n = int(sys.stdin.readline().rstrip())
+
+    if n == 0 :
+        return list(), 0
+
+    arr = list(map(int, sys.stdin.readline().rstrip().split(" ")))
+    return arr, n
+
+
+#main
+t = int(sys.stdin.readline().rstrip())
+
+while t > 0 :
+
+    arr, n = takeInput()
+    print(findUnique(arr, n))
+
+    t -= 1
+""" "\n" \t
+
+
+#Second Largest in an Array
+
+"""
+from sys import stdin
+#MIN_VALUE = -2147483648
+
+
+from sys import stdin
+MIN_VALUE = -2147483648
+
+
+def secondLargestElement(arr, n):
+    largest = second_largest = MIN_VALUE
+    
+    for i in range(n):
+        if arr[i] > largest:
+            second_largest = largest
+            largest = arr[i]
+        elif arr[i] > second_largest and arr[i] != largest:
+            second_largest = arr[i]
+
+    return second_largest
+""" "\n" \t
+
+#Intersection of two Arrays-2
+
+"""
+import sys
+
+def intersections(arr1, n, arr2, m) :
+    #Your code goes here
+    for i in range(n):
+        for j in range(m):
+            if arr1[i] == arr2[j]:
+                print(arr1[i],end =" ")
+                arr2[j] = sys.maxsize
+                break
+
+""" "\n"\t
+
+
+
